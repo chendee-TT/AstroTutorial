@@ -1,19 +1,267 @@
-<!-- https://github.com/chendee-TT/TTWebSiteSandBox.git -->
-<!-- test -->
---
---
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<h1>My Astro Site-Cat</h1>
-	</body>
-</html>
+<MainLayout title="Tactonic Technologies">
+
+  <!-- Hero Section -->
+  <section class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">
+          Advanced Robotic Sensing Systems
+        </p>
+
+        <h1 class="mt-6 text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-tight">
+          Adaptive robotic gripping through real-time shape sensing.
+        </h1>
+
+        <p class="mt-8 text-xl leading-8 text-gray-600 max-w-3xl">
+          Tactonic Technologies develops multi-DOF sensing systems for robotic
+          grippers and robotic hands, enabling real-time object shape detection
+          and dynamic grip adaptation for complex manipulation tasks.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/technology"
+            class="inline-flex items-center justify-center rounded-lg bg-gray-900 px-6 py-3 text-white font-medium hover:bg-gray-700 transition"
+          >
+            Explore Technology
+          </a>
+
+          <a
+            href="/partnerships"
+            class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 text-gray-800 font-medium hover:bg-gray-100 transition"
+          >
+            Partnerships & Research
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
+          Mission
+        </p>
+
+        <h2 class="mt-4 text-4xl font-bold tracking-tight text-gray-900">
+          Expanding robotic capability in complex environments.
+        </h2>
+      </div>
+
+      <div class="space-y-6 text-lg leading-8 text-gray-600">
+        <p>
+          Modern robotic systems continue to face significant limitations when
+          interacting with irregular, delicate, or dynamically changing objects.
+          Tactonic Technologies addresses this challenge through advanced
+          sensing architectures designed to improve robotic perception during
+          physical interaction.
+        </p>
+
+        <p>
+          Our sensing platforms provide robotic grippers with real-time spatial
+          feedback, enabling adaptive grip behavior during manipulation tasks.
+          This capability supports more reliable automation in unstructured
+          environments where traditional rigid gripping systems are insufficient.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="bg-gray-50 border-y border-gray-200 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
+          Technology
+        </p>
+
+        <h2 class="mt-4 text-4xl font-bold tracking-tight text-gray-900">
+          Multi-DOF sensing for dexterous robotic manipulation.
+        </h2>
+
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Tactonic’s sensing systems are designed to provide robotic manipulators
+          with enhanced spatial awareness and adaptive control during physical
+          interaction with objects.
+        </p>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-2 gap-8">
+
+        <!-- Current Platform -->
+        <div class="rounded-2xl border border-gray-200 bg-white p-8">
+          <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            Current Platform
+          </p>
+
+          <h3 class="mt-4 text-2xl font-bold text-gray-900">
+            3 DOF Sensor System
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            The current sensing platform enables real-time feedback for
+            object interaction, supporting shape detection, grip stabilization,
+            and adaptive manipulation during contact events.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li>• Real-time contact sensing</li>
+            <li>• Shape-aware grip adjustment</li>
+            <li>• Adaptive manipulation feedback</li>
+            <li>• Enhanced object handling stability</li>
+          </ul>
+        </div>
+
+        <!-- Future Platform -->
+        <div class="rounded-2xl border border-gray-200 bg-white p-8">
+          <p class="text-sm font-semibold uppercase tracking-wide text-gray-500">
+            Next Generation
+          </p>
+
+          <h3 class="mt-4 text-2xl font-bold text-gray-900">
+            6 DOF Sensor Architecture
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            The next-generation platform expands sensing capability toward
+            higher-dimensional spatial interaction modeling, supporting more
+            dexterous and autonomous robotic manipulation.
+          </p>
+
+          <ul class="mt-6 space-y-3 text-gray-700">
+            <li>• Expanded spatial awareness</li>
+            <li>• Advanced shape reconstruction</li>
+            <li>• Improved dexterous manipulation</li>
+            <li>• Enhanced autonomy in unstructured environments</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
+          Applications
+        </p>
+
+        <h2 class="mt-4 text-4xl font-bold tracking-tight text-gray-900">
+          Designed for demanding automation environments.
+        </h2>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Industrial Automation
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            Adaptive robotic handling for irregular components, precision
+            assembly, and variable manufacturing workflows.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Logistics
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            Improved robotic parcel handling and manipulation across mixed
+            object geometries and packaging conditions.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Agriculture
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            Enhanced handling of delicate produce and variable organic objects
+            requiring adaptive force distribution.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Defense Robotics
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            Support for robotic systems operating in unpredictable field
+            environments requiring robust autonomous interaction.
+          </p>
+        </div>
+
+        <div class="border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Advanced Manufacturing
+          </h3>
+
+          <p class="mt-4 text-gray-600 leading-7">
+            Increased manipulation precision for next-generation robotic
+            manufacturing and inspection systems.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnerships Section -->
+  <section class="bg-gray-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+          Partnerships & Research
+        </p>
+
+        <h2 class="mt-4 text-4xl font-bold tracking-tight">
+          Advancing robotic autonomy through collaborative development.
+        </h2>
+
+        <p class="mt-8 text-lg leading-8 text-gray-300">
+          Tactonic Technologies seeks collaboration opportunities with research
+          institutions, industrial partners, government agencies, and innovation
+          programs focused on robotic autonomy, advanced sensing, and dexterous
+          manipulation systems.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-gray-900 font-medium hover:bg-gray-200 transition"
+          >
+            Contact Tactonic
+          </a>
+
+          <a
+            href="/about"
+            class="inline-flex items-center justify-center rounded-lg border border-gray-600 px-6 py-3 text-white font-medium hover:bg-gray-800 transition"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</MainLayout>
