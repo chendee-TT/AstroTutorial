@@ -1,35 +1,84 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { SITE } from "../config";
+
+const applications = [
+  {
+    name: "Industrial systems",
+    body: "Environments where reliable physical interaction with variable components is required under changing conditions.",
+    need: "Contact feedback that stays informative as parts, positions, and conditions vary.",
+  },
+  {
+    name: "Automated logistics",
+    body: "Systems that handle, sort, and manipulate heterogeneous objects with uncertain geometry and material properties.",
+    need: "A richer picture of how an object is being held, so grip can adapt to what is actually in the gripper.",
+  },
+  {
+    name: "Agricultural systems",
+    body: "Environments involving delicate, deformable, or irregular organic materials that require adaptive physical interaction.",
+    need: "Sensitive measurement of pressure and shear so soft or irregular items can be handled without damage.",
+  },
+  {
+    name: "Research and robotics platforms",
+    body: "Experimental systems exploring advanced manipulation, sensing, and embodied interaction in controlled or exploratory settings.",
+    need: "High-resolution contact data for studying and developing manipulation behavior.",
+  },
+  {
+    name: "Defense and field systems",
+    body: "Robust systems operating in unstructured, unpredictable environments where physical interaction reliability is critical.",
+    need: "Contact awareness that holds up when conditions cannot be controlled or predicted.",
+  },
+];
 ---
 
-<MainLayout title="TACTONIC">
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight max-w-4xl">
-        Adaptive Robotic Gripping Through Advanced Shape Sensing
-      </h1>
+<MainLayout
+  title={`Applications | ${SITE.name}`}
+  description="Where high-resolution force, pressure, and shear sensing matters: industrial systems, logistics, agriculture, robotics research, and field systems."
+>
 
-      <p class="mt-8 text-xl text-gray-600 max-w-3xl">
-        Tactonic develops next-generation sensing systems for robotic grippers,
-        enabling real-time shape detection and dynamic grip adaptation for
-        complex manipulation tasks.
-      </p>
-
-      <div class="mt-10 flex gap-4">
-        <a
-          href="/technology"
-          class="bg-black text-white px-6 py-3 rounded-lg"
-        >
-          Explore Technology
-        </a>
-
-        <a
-          href="/partnerships"
-          class="border border-gray-300 px-6 py-3 rounded-lg"
-        >
-          Partnerships
-        </a>
+  <section class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">Applications</p>
+        <h1 class="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+          Systems that require precise understanding of physical interaction.
+        </h1>
+        <p class="mt-8 text-xl text-gray-600 leading-8">
+          High-resolution sensing of force, pressure, and shear improves performance wherever physical interaction is central to function, reliability, or safety.
+        </p>
       </div>
     </div>
   </section>
+
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+        {applications.map((app) => (
+          <div class="border border-gray-200 rounded-2xl p-8">
+            <h2 class="text-2xl font-semibold text-gray-900">{app.name}</h2>
+            <p class="mt-4 text-gray-600 leading-7">{app.body}</p>
+            <p class="mt-6 text-gray-900 leading-7">
+              <span class="font-semibold">What sensing adds: </span>{app.need}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-4xl font-bold leading-tight">Have an application in mind?</p>
+        <p class="mt-6 text-lg text-gray-300 leading-8">
+          Tell us what your system needs to understand about contact, and we can discuss whether our sensing platform is a fit.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/contact" class="bg-white text-black px-6 py-3 rounded-lg">Contact us</a>
+          <a href="/technology" class="border border-gray-600 px-6 py-3 rounded-lg">Technology overview</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>

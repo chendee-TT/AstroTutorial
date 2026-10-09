@@ -1,35 +1,100 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { SITE } from "../config";
 ---
 
-<MainLayout title="TACTONIC">
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight max-w-4xl">
-        Adaptive Robotic Gripping Through Advanced Shape Sensing
-      </h1>
+<MainLayout
+  title={`About | ${SITE.name}`}
+  description="Tactonic Technologies is building solid-state sensing systems that help machines understand and respond to physical interaction."
+>
 
-      <p class="mt-8 text-xl text-gray-600 max-w-3xl">
-        Tactonic develops next-generation sensing systems for robotic grippers,
-        enabling real-time shape detection and dynamic grip adaptation for
-        complex manipulation tasks.
-      </p>
-
-      <div class="mt-10 flex gap-4">
-        <a
-          href="/technology"
-          class="bg-black text-white px-6 py-3 rounded-lg"
-        >
-          Explore Technology
-        </a>
-
-        <a
-          href="/partnerships"
-          class="border border-gray-300 px-6 py-3 rounded-lg"
-        >
-          Partnerships
-        </a>
+  <section class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">About</p>
+        <h1 class="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+          Enabling machines to understand and respond to physical interaction.
+        </h1>
+        <p class="mt-8 text-xl text-gray-600 leading-8">
+          Tactonic Technologies develops solid-state multi-axis sensing systems that measure force, pressure, and shear during real-time contact.
+        </p>
       </div>
     </div>
   </section>
+
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+      <div>
+        <h2 class="text-sm uppercase tracking-[0.2em] text-gray-500">The problem</h2>
+        <p class="mt-4 text-4xl font-bold text-gray-900 leading-tight">
+          Physical interaction is one of the least precisely measured parts of engineered systems.
+        </p>
+      </div>
+      <div class="space-y-6 text-lg text-gray-600 leading-8">
+        <p>
+          Most approaches reduce contact to a limited force or pressure signal, without capturing the full structure of what is happening at the interface.
+        </p>
+        <p>
+          Systems that grasp, handle, and manipulate objects need more than "contact or no contact." They need to know where contact is occurring, how it is distributed, and how it is changing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 border-y border-gray-200 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-sm uppercase tracking-[0.2em] text-gray-500">Our approach</h2>
+      <p class="mt-4 text-4xl font-bold text-gray-900 max-w-3xl">
+        From simple force detection to meaningful interpretation of contact.
+      </p>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">Today: 3 DOF sensing</h3>
+          <p class="mt-4 text-gray-600 leading-7">
+            Our current platform provides structured, real-time measurement of multi-axis force and pressure interactions.
+          </p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900">Next: 6 DOF expansion</h3>
+          <p class="mt-4 text-gray-600 leading-7">
+            The next platform expands sensing dimensionality for richer characterization of interaction dynamics.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <a href="/technology" class="text-black font-medium underline">Read about the technology →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TODO: Replace this placeholder with real team information (names, roles, short bios, advisors).
+       Grant reviewers and customers typically look for this on an About page. -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-sm uppercase tracking-[0.2em] text-gray-500">Team</h2>
+      <p class="mt-4 text-4xl font-bold text-gray-900 max-w-3xl">The people behind the platform.</p>
+
+      <div class="mt-12 rounded-2xl border-2 border-dashed border-gray-300 p-8 text-gray-600 leading-7 max-w-3xl">
+        [PLACEHOLDER: add founders, key team members, and advisors here, with a sentence or two on each person's background.]
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-900 text-white py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <p class="text-4xl font-bold leading-tight">Interested in working with us?</p>
+        <p class="mt-6 text-lg text-gray-300 leading-8">
+          We work with research institutions, industry partners, and public-sector programs.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/contact" class="bg-white text-black px-6 py-3 rounded-lg">Contact us</a>
+          <a href="/partnerships" class="border border-gray-600 px-6 py-3 rounded-lg">Partnerships</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>

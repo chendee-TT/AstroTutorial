@@ -1,35 +1,74 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { SITE } from "../config";
+
+const mail = (subject: string) =>
+  `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}`;
+
+const topics = [
+  {
+    title: "Research collaboration",
+    body: "Joint research, sensing architecture work, or access to interaction data for study.",
+    subject: "Research collaboration inquiry",
+  },
+  {
+    title: "Product evaluation",
+    body: "Interested in testing the sensing platform in a robotics, automation, or handling system.",
+    subject: "Product evaluation inquiry",
+  },
+  {
+    title: "Programs and funding",
+    body: "Public-sector programs, grants, or other collaborative funding opportunities.",
+    subject: "Program or funding inquiry",
+  },
+];
 ---
 
-<MainLayout title="TACTONIC">
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight max-w-4xl">
-        Adaptive Robotic Gripping Through Advanced Shape Sensing
-      </h1>
+<MainLayout
+  title={`Contact | ${SITE.name}`}
+  description="Get in touch with Tactonic Technologies about research collaboration, product evaluation, or partnerships."
+>
 
-      <p class="mt-8 text-xl text-gray-600 max-w-3xl">
-        Tactonic develops next-generation sensing systems for robotic grippers,
-        enabling real-time shape detection and dynamic grip adaptation for
-        complex manipulation tasks.
-      </p>
-
-      <div class="mt-10 flex gap-4">
-        <a
-          href="/technology"
-          class="bg-black text-white px-6 py-3 rounded-lg"
-        >
-          Explore Technology
-        </a>
-
-        <a
-          href="/partnerships"
-          class="border border-gray-300 px-6 py-3 rounded-lg"
-        >
-          Partnerships
-        </a>
+  <section class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">Contact</p>
+        <h1 class="mt-6 text-5xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+          Talk with us about physical interaction sensing.
+        </h1>
+        <p class="mt-8 text-xl text-gray-600 leading-8">
+          The best way to reach us is by email. Choose the topic closest to your question and we will start a message for you.
+        </p>
       </div>
     </div>
   </section>
+
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8">
+        {topics.map((t) => (
+          <div class="border border-gray-200 rounded-2xl p-8 flex flex-col">
+            <h2 class="text-xl font-semibold text-gray-900">{t.title}</h2>
+            <p class="mt-4 text-gray-600 leading-7 grow">{t.body}</p>
+            <a href={mail(t.subject)} class="mt-8 inline-block text-black font-medium underline">
+              Email us about this
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 max-w-3xl">
+        <h2 class="text-sm uppercase tracking-[0.2em] text-gray-500">Anything else</h2>
+        <p class="mt-4 text-lg text-gray-700 leading-8">
+          Write to us directly at
+          <a href={mail("General inquiry")} class="underline underline-offset-4 font-medium text-gray-900">{SITE.email}</a>.
+          Please include your organization and a short description of what you are working on.
+        </p>
+        <p class="mt-4 text-sm text-gray-500">
+          We use what you send only to respond to you. See our <a href="/privacy" class="underline underline-offset-4">privacy policy</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>

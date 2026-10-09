@@ -1,34 +1,121 @@
 ---
 import '../styles/global.css';
-const { title, description = 'Tactonic Technologies develops solid-state multi-axis force and pressure sensing systems.' } = Astro.props;
-const { title } = Astro.props;
+import { SITE } from '../config';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = SITE.description } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/applications', label: 'Applications' },
+  { href: '/partnerships', label: 'Partnerships' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={Astro.generator} />
   </head>
 
-  <body class="bg-white text-gray-900 font-sans">
-    <header class="border-b border-gray-200">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
-        <div class="font-bold text-xl">TACTONIC</div>
+  <body class="bg-white text-gray-900 font-sans antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded"
+    >
+      Skip to content
+    </a>
 
-        <div class="flex gap-6 text-sm">
-          <a href="/">Home</a>
-          <a href="/technology">Technology</a>
-          <a href="/applications">Applications</a>
-          <a href="/partnerships">Partnerships</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
-        </div>
+    <header class="border-b border-gray-200">
+      <nav
+        class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-3"
+        aria-label="Main"
+      >
+        <a href="/" class="font-bold text-xl tracking-tight">{SITE.shortName}</a>
+
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          {nav.map((item) => {
+            const active = item.href === path;
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  class:list={[
+                    'transition-colors hover:text-black',
+                    active ? 'text-black font-medium underline underline-offset-8' : 'text-gray-600',
+                  ]}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <slot />
     </main>
+
+    <footer class="border-t border-gray-200 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3 text-sm">
+        <div>
+          <p class="font-bold text-base tracking-tight">{SITE.shortName}</p>
+          <p class="mt-3 text-gray-600 leading-6 max-w-xs">
+            Solid-state multi-axis force and pressure sensing for real-time physical interaction.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-gray-900">Explore</p>
+          <ul class="mt-3 space-y-2 text-gray-600">
+            {nav.slice(1).map((item) => (
+              <li><a href={item.href} class="hover:text-black">{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-semibold text-gray-900">Contact</p>
+          <p class="mt-3">
+            <a href={`mailto:${SITE.email}`} class="text-gray-600 hover:text-black underline underline-offset-4">
+              {SITE.email}
+            </a>
+          </p>
+          <p class="mt-4">
+            <a href="/privacy" class="text-gray-600 hover:text-black">Privacy policy</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200">
+        <p class="max-w-6xl mx-auto px-6 py-5 text-xs text-gray-500">
+          &copy; {year} {SITE.legalName}. All rights reserved.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
